@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>{{.Thread |html}}</title>
+</head>
+<body>
+	<h1> {{.Thread |html}}</h1>
+	<form action="/view/{{.Thread |html}}" method="GET">
+		<input type="submit" value="Reload">
+	</form>
+	<div>
+		{{range .Messages}}
+		<p><strong>{{.User}}:</strong> {{.Text}}</p>
+		{{end}}
+	</div>
+	
+	<form action="/send/{{.Thread |html}}" method="POST">
+		<input type="text" name="message">
+		<input type="submit" value="send">
+	</form>
+</body>
+</html>

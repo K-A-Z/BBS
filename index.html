@@ -1,18 +1,14 @@
 <html>
 <head>
-	<title>{{.Thread |html}}</title>
+	<title>GoBBS</title>
 </head>
 <body>
-	<h1> {{.Thread |html}}スレ</h1>
-	<div>
-		{{range .Messages}}
-		<p><strong>{{.User}}:</strong> {{.Text}}</p>
-		{{end}}
-	</div>
+	<h1> Enter your USERNAME</h1>
+
 	
-	<form action="/send/{{.Thread |html}}" method="POST">
-		<input type="text" name="message">
-		<input type="submit" value="send"></div>
+	<form action="/login" method="POST">
+		<input type="text" name="username">
+		<input type="submit" value="Go BBS"></div>
 	</form>
 </body>
 </html>
